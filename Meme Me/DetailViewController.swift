@@ -13,7 +13,8 @@ class DetailViewController: UIViewController {
     
     var imageToShow: UIImage!
     
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.imageView.image = imageToShow
         self.tabBarController?.tabBar.isHidden = true
     }
