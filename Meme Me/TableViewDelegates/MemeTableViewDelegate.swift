@@ -14,6 +14,12 @@ import UIKit
  */
 class MemeTableViewDelegate: NSObject, UITableViewDataSource, UITableViewDelegate {
     
+    private var callerVC: MemeTableViewController!
+    
+    init(_ viewController: MemeTableViewController) {
+        callerVC = viewController
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let memes = (UIApplication.shared.delegate as! AppDelegate).memes
 //        print(memes.count)
@@ -26,5 +32,11 @@ class MemeTableViewDelegate: NSObject, UITableViewDataSource, UITableViewDelegat
         cell.textLabel!.text = meme.topText + "..." + meme.bottomText
         cell.imageView!.image = meme.memedImage
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = callerVC.storyboard?.instantiateViewController(identifier: "detailViewController") as! DetailViewController
+        detailVC.imageToShow = (UIApplication.shared.delegate as! AppDelegate).memes[(indexPath as NSIndexPath).row].memedImage
+        callerVC.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

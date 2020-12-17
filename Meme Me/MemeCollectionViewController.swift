@@ -12,12 +12,13 @@ class MemeCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    private let memeCollectionViewDelege = MemeCollectionViewDelegate()
+    private var memeCollectionViewDelegate: MemeCollectionViewDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = memeCollectionViewDelege
-        collectionView.dataSource = memeCollectionViewDelege
+        memeCollectionViewDelegate = MemeCollectionViewDelegate(self)
+        collectionView.delegate = memeCollectionViewDelegate
+        collectionView.dataSource = memeCollectionViewDelegate
         let space: CGFloat = 3.0
         let widthDiemension = (view.frame.size.width - 2 * space) / 3.0
         let heightDiemension = (view.frame.size.height - 2 * space) / 3.0

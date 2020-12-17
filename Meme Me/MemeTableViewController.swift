@@ -11,10 +11,11 @@ class MemeTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var tableViewDelegate = MemeTableViewDelegate()
+    private var tableViewDelegate: MemeTableViewDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewDelegate = MemeTableViewDelegate(self)
         tableView.delegate = tableViewDelegate
         tableView.dataSource = tableViewDelegate
         self.modalPresentationStyle = .fullScreen

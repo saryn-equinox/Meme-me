@@ -129,6 +129,35 @@
             </objects>
             <point key="canvasLocation" x="1251" y="577"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Srw-cZ-cDp">
+            <objects>
+                <viewController storyboardIdentifier="detailViewController" id="mUe-Fi-riR" customClass="DetailViewController" customModule="Meme_Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vuO-gi-r64">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FBo-5c-Ka4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cBj-Yy-HwD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FBo-5c-Ka4" firstAttribute="leading" secondItem="cBj-Yy-HwD" secondAttribute="leading" id="7fk-fw-VA1"/>
+                            <constraint firstItem="FBo-5c-Ka4" firstAttribute="top" secondItem="cBj-Yy-HwD" secondAttribute="top" id="MHs-VA-1G1"/>
+                            <constraint firstItem="cBj-Yy-HwD" firstAttribute="bottom" secondItem="FBo-5c-Ka4" secondAttribute="bottom" id="bmp-bb-tAF"/>
+                            <constraint firstItem="cBj-Yy-HwD" firstAttribute="trailing" secondItem="FBo-5c-Ka4" secondAttribute="trailing" id="hgp-4o-Jps"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="FBo-5c-Ka4" id="wdf-5i-BpT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7X-X4-VIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048" y="590"/>
+        </scene>
         <!--NewMemeView Controller-->
         <scene sceneID="Am4-p4-gkn">
             <objects>
@@ -216,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laA-Os-Tbx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="868"/>
+            <point key="canvasLocation" x="2126" y="1270"/>
         </scene>
         <!--MemeTableView Controller-->
         <scene sceneID="dOF-sB-krb">

@@ -9,6 +9,13 @@ import Foundation
 import UIKit
 
 class MemeCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    private var callerVC: MemeCollectionViewController!
+    
+    init(_ viewController: MemeCollectionViewController) {
+        callerVC = viewController
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (UIApplication.shared.delegate as! AppDelegate).memes.count
     }
@@ -21,4 +28,9 @@ class MemeCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollecti
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = callerVC.storyboard?.instantiateViewController(identifier: "detailViewController") as! DetailViewController
+        detailVC.imageToShow = (UIApplication.shared.delegate as! AppDelegate).memes[(indexPath as NSIndexPath).row].memedImage
+        callerVC.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }

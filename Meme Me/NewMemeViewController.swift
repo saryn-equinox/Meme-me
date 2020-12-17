@@ -38,7 +38,7 @@ class NewMemeViewController: UIViewController {
         setTextFieldParameters(topText, topTextFiledDelegate, "ENTER TOP")
         setTextFieldParameters(bottomText, bottomTextFiledDelegate, "ENTER BOTTOM")
         
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         shareButton.isEnabled = false
         
     }
@@ -65,6 +65,7 @@ class NewMemeViewController: UIViewController {
         textField.alpha = 0
         textField.borderStyle = .none
         textField.text = text
+        textField.autocapitalizationType = .allCharacters // auto capitalized
     }
     
     @IBAction func cancel(_ sender: Any) {
